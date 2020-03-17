@@ -50,7 +50,8 @@ Instead of typing in python -m unittest test_calc.py,
 we can abbreviate by placing the following at the bottom
 of the test_calc.py file:
 
-
+if __name__ == '__main__':
+	unittest.main()
 
 
 This will allow you to run the test using:
@@ -67,4 +68,5 @@ If an AssertionError is produced, the first value is what is
 the output produced by the function and the second is what
 you hardcoded as the expectation. 
 """
+
 
