@@ -1,3 +1,7 @@
+# Corey Schafer
+# Python Tutorial: Unit Testing Your Code with the unittest Module
+# https://www.youtube.com/watch?v=6tNS--WetLI
+
 import unittest
 import calc
 
@@ -27,8 +31,11 @@ class TestCalc(unittest.TestCase):
 		self.assertEqual(calc.divide(10,2),5)
 		self.assertEqual(calc.divide(-10,2),-5)
 		self.assertEqual(calc.divide(-1,-1),1)
+		
 		self.assertRaises(ValueError, calc.divide,10,0)
-
+	#	Can also use a context manager to check ValueError:
+		with self.assertRaises(ValueError):
+			calc.divide(10,0)
 
 	def test_power(self):
 		self.assertEqual(calc.power(2,4),16)
